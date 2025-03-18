@@ -20,6 +20,7 @@
         </p>
     </form>
     <?php
+        if(!empty($_POST['valor'])){
         // a variavel $valor ira receber o campo do formulario com o nome valor
         //enviado pelo pelo formulario pelo method post
         $valor = $_POST['valor'];
@@ -28,6 +29,30 @@
         }else{
             echo "O valor é impar!";
         }
+    }
     ?>
+    <!-- Escreva um algoritmo que leia um número digitado pelo usuário e mostre a mensagem
+    Número maior do que 10!”, caso este número seja maior, ou “Número menor ou igual a 10!”,
+    caso este número seja menor ou igual -->
+    <h1>Exercicio 1</h1>
+    <p>Digite um numero inteiro</p>
+    <form action="exercicio01.php" method="post">
+        <p>
+        <label for="maiorOuMenor">Digite um valor</label>
+        <input type="text" name="maiorOuMenor" min="1" max="100" required>
+        </p>
+        <p>
+        <button type="submit">Verificar</button>
+        <input type="submit" value="Verificar">
+        </p>
+        <?php
+        if(empty($_POST['maiorOuMenor'])){
+            if(empty($_POST['maiorOuMenor']) < 10){
+                echo "Numero menor que 10!";
+            }else{
+                echo "Numero maior que 10";
+            }
+        }
+        ?>
 </body>
 </html>
