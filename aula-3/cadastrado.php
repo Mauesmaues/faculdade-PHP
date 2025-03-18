@@ -14,19 +14,18 @@
         // verificar se a página recebeu dados enviados via POST
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             // receber dados e mostrar na tela
-            if(!empty($_POST['name']) && !empty($_POST['fone']) && !empty($_POST['address'] && !empty($_POST['email']))){
-                echo "Nome: " . $_POST['name'] . "<br>";
-                echo "Fone: " . $_POST['fone'] . "<br>";
-                echo "Endereço: " . $_POST['address'] . "<br>";
-                echo "E-mail: " . $_POST['email'] . "br";
+            $dados = $_POST;
+            if(!empty($dados['name']) && !empty($dados['fone']) && !empty($dados['address'] && !empty($dados['email']))){
+                echo "Nome: " . $dados['name'] . "<br>";
+                echo "Fone: " . $dados['fone'] . "<br>";
+                echo "Endereço: " . $dados['address'] . "<br>";
+                echo "E-mail: " . $dados['email'] . "<br>";
             }else{
                 echo "<h3>Algum  foi campo enviado sem dado!</h3>";
             }
             // echo "<pre>";
             // var_dump($_POST);
             // echo "</pre>";
-       
-            
         }else{
             // mostrar uma mensagem de erro
             echo "<h3>ATENÇÂO: Nenhum dado de cliente foi enviado!</h3>";

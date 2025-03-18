@@ -12,9 +12,7 @@
         //include_once serve para incluir um arquivo apenas uma vez independente de quantas vezes for declarado
         include_once ('form_cadastro.php'); 
 
-        require ('form_cadastro.php');
-
-        require ('cadastro.php');
+        require_once ('form_pesquisa.php');
 
     ?>
 </body>
