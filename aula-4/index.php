@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <p><a href="exemplo.php">></a></p>
     <?php
         $frutas = array("macã", "goiaba", "pera");
 
