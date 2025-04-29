@@ -4,7 +4,7 @@
     function fazerLogin($usuario, $senha){
         global $banco;
         $banco = new mysqli("localhost:3307", "root", "", "php-segunda-noite");
-        $q = "SELECT * FROM usuarios WHERE usuario='usuario'";
+        $q = "SELECT * FROM usuarios WHERE usuario='$usuario'";
         $resp = $banco->query($q);
 
         if($resp->num_rows === 0){
@@ -13,7 +13,7 @@
             echo "usuario encontrado";
 
             $obj_usuario = $resp->fetch_object();
-            if($usuario === $obj_usuario->senha){
+            if($senha === $obj_usuario->senha){
                 return true;
             }else{
                 return false;
