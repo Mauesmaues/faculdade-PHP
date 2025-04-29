@@ -1,0 +1,24 @@
+<?php
+    $banco = new mysqli("localhost:3307", "root", "", "php-segunda-noite");
+    
+    function fazerLogin($usuario, $senha){
+        $banco = new mysqli("localhost:3307", "root", "", "php-segunda-noite");
+        $q = "SELECT * FROM usuarios WHERE usuario='usuario'";
+        $resp = $banco->query($q);
+
+        if($resp->num_rows === 0){
+            echo "nenhum usuario";
+        }else{
+            echo "usuario encontrado";
+
+            $obj_usuario = $resp->fetch_object();
+            if($usuario === $obj_usuario->senha){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+    }
+
+?>
