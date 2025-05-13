@@ -20,7 +20,8 @@
                 <input type="submit" value="Excluir"></form>';
 
     while($item = $resp->fetch_object()){
-    echo "<br> - " . $item->texto . "-> <a href='excluir-tarefa-get.php?id='$item->id''>apagar</a>" ;
+    echo "<br> - " . $item->texto . "-> <a href='excluir-tarefa-get.php?id=$item->id'>[apagar]</a>"
+    . "<a href='editar.php?id=$item->id'>[editar]</a>" ;
 
     }
 

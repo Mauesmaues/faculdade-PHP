@@ -1,5 +1,5 @@
 <?php
-    if($server['REQUEST_METHOD'] === "GET"){
+    if($_SERVER["REQUEST_METHOD"] === "GET"){
         require "banco.php";
 
         $idTarefa = $_GET['id'] ?? null;
