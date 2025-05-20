@@ -3,9 +3,9 @@
 ?>
 
     <li>
-        <?=$item->texto?>
-        <ul><a href='excluir-tarefa-get.php?id=$item->id'>[apagar]</a></ul>
-        <ul><a href='editar.php?id=$item->id'>[editar]</a></ul>;
+        <?=$item->texto?>;
+        <ul><a href='?p=apagar/<?$tarefa->id?>'>[apagar]</a></ul>
+        <ul><a href='?p=editar/<?$tarefa->id?>'>[editar]</a></ul>;
     </li>
 
 <?php

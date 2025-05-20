@@ -1,7 +1,7 @@
 <?php
     class TarefasController{
         static function index(){
-                require_once("banco.php");
+            require_once("banco.php");
     
             session_start();
             $idUsuario = $_SESSION['id_usuario'] ?? null;
@@ -31,10 +31,21 @@
 
         }
 
-        static function apagarTarefa(){
+        static function apagarTarefa($idTarefa){
+                if($_SERVER["REQUEST_METHOD"] === "GET"){
+                require "banco.php";
 
+                //$idTarefa = $_GET['id'] ?? null;
+
+                if(!is_null($idTarefa)){
+                    $q = "DELETE FROM tarefas WHERE id = '$idTarefa';";
+                    $banco->query($q);
+                }
+                }
+
+                header("Location: dashboard.php");
+            }
         }
-    }
 
 
 ?>

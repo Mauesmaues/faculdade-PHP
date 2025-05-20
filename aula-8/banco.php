@@ -3,6 +3,7 @@
     
     function fazerLogin($usuario, $senha){
         global $banco;
+         $banco = new mysqli("localhost:3307", "root", "", "php-segunda-noite");
 
         $q = "SELECT * FROM usuarios WHERE usuario='$usuario'";
         $resp = $banco->query($q);

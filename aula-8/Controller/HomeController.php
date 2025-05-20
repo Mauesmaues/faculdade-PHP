@@ -1,9 +1,8 @@
 <?php
     class HomeController{
         static  function login(){
+
             session_start();
-
-
             if($_SERVER["REQUEST_METHOD"] === "POST"){
                 echo "<br>...fazendo login";
 
@@ -32,7 +31,7 @@
             }
 
 
-            include __DIR__ . "../View/login.php";
+            include __DIR__ . "/../View/login.php";
 
         }
 
